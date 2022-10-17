@@ -1,0 +1,320 @@
+<?php
+/*
+ملف مقدم من قناه
+@php88
+@MrOan8
+اصل الملف ايراني وضفت لليكمز انيجه ع صفحه
+
+
+*/
+ob_start();
+$API_KEY = "5703078849:AAH0bEMCFWDoxbamWxHKsUnbOdIlGdkWuCA"; #توكنك
+define('API_KEY',$API_KEY);
+echo "";
+function Mroan($method,$datas=[]){
+$url = "https://api.telegram.org/bot".API_KEY."/".$method;
+$ch = curl_init();
+curl_setopt($ch,CURLOPT_URL,$url); curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+curl_setopt($ch,CURLOPT_POSTFIELDS,$datas);
+$res = curl_exec($ch);
+if(curl_error($ch)){
+var_dump(curl_error($ch));
+}else{return json_decode($res);}}
+$update = json_decode(file_get_contents('php://input'));
+$message = $update->message;
+$admin = $message->chat->id;
+$text = $message->text;
+$admin2 = $update->callback_query->message->chat->id;
+$message_id = $update->callback_query->message->message_id;
+$data = $update->callback_query->data;
+$from_id = $message->from->id;
+$php88 = file_get_contents("Dozax1 .txt");
+$Dozax1= file_get_contents("Dozax1.txt");
+$php8820 = json_decode(file_get_contents('php://input'));
+$Dozax18 = $update->message;
+$Dozax13 = $Dozax18->chat->id;
+$Dozax17 = $Dozax18->text;
+$Dozax15 = $Dozax18->from->first_name;
+$Dozax16 = $Dozax18->from->username;
+$Dozax11 = $Dozax18->from->id;
+$meme = file_get_contents("MROAN.txt");
+$MROAN = "$Dozax1";
+$admin = "5703797578"; #ايديك
+if($text == '/start' or $text == "رجوع '🍬!" and $from_id == $admin) {
+	Mroan('sendmessage',[
+	'chat_id'=>$admin,
+	'text'=>"🎻¦ مرحبا بك  » [$Dozax15](tg://user?id=$Dozax11)
+🍉¦ عزيزي المطور اليك الاوامر يمكنك استخدام الاوامر الخاصه بك '💸!
+🎼¦ الاوامر متاحه فقط لك عزيزي صاحب البوت '🎥!
+🔖¦ البوت يتيح لك تحكم الكامل بالقناة '🔬!
+*___________________________________*",
+'parse_mode'=>"MARKDOWN",
+'reply_markup'=>json_encode([ 
+'keyboard'=>[ 
+[['text'=>"نشر رساله '🍭!"],['text'=>"نشر بل ميديا '💌!"]],
+[['text'=>"اضافة قناة '🔖!"], ['text'=>"عرض قناة '📆!"],['text'=>"حذف قناة '🎹!"]],
+[['text'=>"قسم الادمنيه '🎁!"],['text'=>"قسم الحظر '📌!"]],
+[['text'=>"اوامر اخرة '⚠!"]],
+[['text'=>"رابط القناة '🎲!"]],
+] 
+]) 
+]); 
+file_put_contents("MROAN.txt","x");
+unlink("php88.txt");
+}
+if($text == "نشر رساله '🍭!" and $from_id == $admin) {
+	file_put_contents("MROAN.txt","meme");
+	Mroan('sendMessage',[
+		'chat_id'=>$admin,
+		'text'=>"🎻¦ اهلا بك » $Dozax15
+حسننا عزيزي ارسل نص الذي تريد نشره '🎯!
+يمكنك استخدام الماركدوان ايضا كمثال '🎺! - [نص](الرابط)
+[تست](t.me/php88)",
+'disable_web_page_preview'=>true,
+'reply_markup'=>json_encode([ 
+'keyboard'=>[[['text'=>"رجوع '🍬!"]],] ]) ]);}
+if($text == "قسم الادمنيه '🎁!" or $text == "رجوع اله قسم الادمنيه '📦!" and $from_id == $admin) {
+Mroan('sendMessage',[
+'chat_id'=>$admin,
+'text'=>"🎻¦ مرحبا بك  » [$Dozax15](tg://user?id=$Dozax11)
+اليك قسم الادمنيه يمكنك استخدام الاوامر التاليه '🍢!",
+'parse_mode'=>"MARKDOWN",
+'reply_markup'=>json_encode([ 
+'keyboard'=>[[['text'=>"رفع ادمن '💻!"],['text'=>"تنزيل ادمن '🎳!"]], [['text'=>"تاك الادمنيه '📷!"],['text'=>"عرض الادمنيه '🎒!"]],[['text'=>"رجوع '🍬!"]],] ]) ]);}
+if($text == "قسم الحظر '📌!" or $text == "رجوع اله قسم الحظر '🎩!" and $from_id == $admin) {
+Mroan('sendMessage',[
+'chat_id'=>$admin,
+'text'=>"🎻¦ مرحبا بك  » [$Dozax15](tg://user?id=$Dozax11)
+اليك قسم الحظر يمكنك استخدام الاوامر التاليه '🍸!",
+'parse_mode'=>"MARKDOWN",
+'reply_markup'=>json_encode([ 
+'keyboard'=>[[['text'=>"حظر عضو '💵!"],['text'=>"الغاء حظر عضو '🍯!"]],[['text'=>"رجوع '🍬!"]],] ]) ]);}
+if($text == "اضافة قناة '🔖!" and $from_id == $admin){
+Mroan('sendmessage',[  
+  'chat_id'=>$admin,   
+'text'=>"🎻¦ مرحبا بك  » [$Dozax15](tg://user?id=$Dozax11)
+💛¦  ارسل معرف قناتك معه @ لكي يتم حفظ القناه  
+💖¦  كمثال $php88",
+'parse_mode'=>"MARKDOWN",
+'reply_markup'=>json_encode([ 
+'keyboard'=>[[['text'=>"رجوع '🍬!"]],] ]) ]); file_put_contents("php88.txt","Dozax1");}
+if($Dozax17 and $php88 == "Dozax1" and $Dozax11 == $admin){
+Mroan("sendmessage",[
+"chat_id"=>$admin,
+"text"=>"👓¦ تم حفظ القناه $Dozax19 بنجاح 
+💌¦ الان عليك رفع البوت ادمن بقناتك لكي يتم تفعيل البوت ",
+'reply_markup'=>json_encode([ 
+'keyboard'=>[[['text'=>"رجوع '🍬!"]],] ]) ]);file_put_contents("Dozax1.txt","$text"); unlink("php88.txt"); }
+if($text == "حذف قناة '🎹!" and $from_id == $admin){Mroan('sendmessage',[    'chat_id'=>$admin,   'text'=>'- تم حذف القناة بنجاح ¦👛', 'reply_markup'=>json_encode([ 
+'keyboard'=>[[['text'=>"رجوع '🍬!"]],] ]) ]); unlink("php88.txt");unlink("Dozax1.txt");}
+if($text == "عرض قناة '📆!" and $from_id == $admin){Mroan('sendmessage',[   'chat_id'=>$admin, 'text'=>"- هذه هي قائمة قناه  ¦🚦
+- 👓¦ قناتك  : $Dozax1",
+'reply_markup'=>json_encode([ 
+'keyboard'=>[[['text'=>"رجوع '🍬!"]],] ]) ]); unlink("php88.txt");}
+	if($text == "رفع ادمن '💻!" and $from_id == $admin) { 
+	Mroan('sendMessage',['chat_id'=>$admin,'text'=>"🎻¦ مرحبا بك  » [$Dozax15](tg://user?id=$Dozax11)
+حسننا عزيزي لرفع العضو الذي اله قائمه ادمن '🔈!
+كمثال '🍥!
+`/add` + ايدي العضو '🍇!
+`/add` + *543150537*",'parse_mode'=>"MARKDOWN",'reply_markup'=>json_encode([ 'keyboard'=>[[['text'=>"رجوع '🍬!"],['text'=>"رجوع اله قسم الادمنيه '📦!"]],] ]) ]);}
+if($text == "تنزيل ادمن '🎳!" and $from_id == $admin) { 
+	Mroan('sendMessage',['chat_id'=>$admin,'text'=>"🎻¦ مرحبا بك  » [$Dozax15](tg://user?id=$Dozax11)
+حسننا عزيزي لتنزيل العضو الذي قائمه الادمنيه '🏆!
+كمثال '🃏!
+`/remove` + ايدي العضو '📛!
+`/remove` + *543150537* '📛!",'parse_mode'=>"MARKDOWN",'reply_markup'=>json_encode([ 'keyboard'=>[[['text'=>"رجوع '🍬!"],['text'=>"رجوع اله قسم الادمنيه '📦!"]],] ]) ]);}
+if($text == "حظر عضو '💵!" and $from_id == $admin) { 
+	Mroan('sendMessage',['chat_id'=>$admin,'text'=>"🎻¦ مرحبا بك  » [$Dozax15](tg://user?id=$Dozax11)
+حسننا عزيزي لتنزيل العضو الذي قائمه الادمنيه '🏆!
+كمثال '💥!
+`/ban` + ايدي العضو '📛!
+`/ban` + *543150537* '📛!",'parse_mode'=>"MARKDOWN",'reply_markup'=>json_encode([ 'keyboard'=>[[['text'=>"رجوع '🍬!"],['text'=>"رجوع اله قسم الحظر '🎩!"]],] ]) ]);}
+if($text == "الغاء حظر عضو '🍯!" and $from_id == $admin) { 
+	Mroan('sendMessage',['chat_id'=>$admin,'text'=>"🎻¦ مرحبا بك  » [$Dozax15](tg://user?id=$Dozax11)
+حسننا عزيزي لتنزيل العضو الذي قائمه الادمنيه '🏆!
+كمثال '💢!
+`/unban` + ايدي العضو '📛!
+`/unban` + *543150537* '📛!",'parse_mode'=>"MARKDOWN",'reply_markup'=>json_encode([ 'keyboard'=>[[['text'=>"رجوع '🍬!"],['text'=>"رجوع اله قسم الحظر '🎩!"]],] ]) ]);}
+if($text == "نشر بل ميديا '💌!" and $from_id == $admin) { 
+Mroan('sendMessage',['chat_id'=>$admin,
+'text'=>"🎻¦ مرحبا بك  » [$Dozax15](tg://user?id=$Dozax11)
+حسننا ارسل احد  الميديا التاليه '🎉!
+صورة،فيديو،ملصق،ملف،متحركه،بصمه،اغنيه، '📤!
+يمكنك استخدام الماركدوان ايضاء '📮!",
+'parse_mode'=>"MARKDOWN",
+'reply_markup'=>json_encode([ 'keyboard'=>[[['text'=>"رجوع '🍬!"]],] ]) ]);}
+if($text == "اوامر اخرة '⚠!" and $from_id == $admin){
+	Mroan('sendmessage',[
+	'chat_id'=>$admin,
+	'text'=>"🎻¦ مرحبا بك  » [$Dozax15](tg://user?id=$Dozax11)
+اليك الاوامر كتالي '📈!
+
+📛¦ `/pin` + *MessageNumber* *رقم الرساله المراد تثبيتهه*
+📛¦ `/unpin` + *MessageNumber* *رقم الرساله المراد الغاء تثبيتهه*
+📛¦ `/setname` + *Name* *الاسم لتغير اسم قناة*
+📛¦ `/setinfo` + *Info* *الوصف لتغير وصف القناة*
+📛¦ `/getmem` + *ID* *ايدي العضو لستخراج معلوماته*
+📛¦ `/admins` - *لعرض ادمنيه القناة*
+📛¦ `/tagadmin` - *لعمل تاك الادمنيه داخل القناة*
+📛¦ `/link` - *لستخراج رابط القناة*",
+'parse_mode'=>"MARKDOWN",
+]);
+}
+if(strpos($text, "/add") !== fmemee){
+    $as = str_replace(['/add',' '],null,$text);
+ Mroan('promoteChatMember',[
+    'chat_id'=>$MROAN,
+    'user_id'=>$as,
+    'can_change_info'=>true,
+    'can_post_messages'=>true,
+    'can_edit_messages'=>true,
+    'can_delete_messages'=>true,
+    'can_invite_users'=>true,
+    'can_restrict_members'=>true,
+    'can_pin_messages'=>fmemee,
+    'can_promote_members'=>true,
+    ]);
+    Mroan('sendmessage',[
+    'chat_id'=>$admin,   
+    'text'=>"🔖¦ مرحبا بك  » [$Dozax15](tg://user?id=$Dozax11)
+📧¦ العضو » [$as](tg://user?id=$as)
+تم رفعه ادمن بالقناة '📠!",
+    'parse_mode'=>"MARKDOWN",
+    ]);
+}
+if(strpos($text, "/remove") !== fmemee){
+    $ad = str_replace(['/remove',' '],null,$text);
+ Mroan('promoteChatMember',[
+    'chat_id'=>$MROAN,
+    'user_id'=>$ad,
+    'can_change_info'=>fmemee,
+    'can_post_messages'=>fmemee,
+    'can_edit_messages'=>fmemee,
+    'can_delete_messages'=>fmemee,
+    'can_invite_users'=>fmemee,
+    'can_restrict_members'=>fmemee,
+    'can_pin_messages'=>fmemee,
+    'can_promote_members'=>fmemee,
+    ]);
+    Mroan('sendmessage',[
+    'chat_id'=>$admin,
+    'text'=>"🔖¦ مرحبا بك  » [$Dozax15](tg://user?id=$Dozax11)    
+🎻¦ العضو » [$ad](tg://user?id=$ad)
+تم تنزيله من قائمه الادمنيه '📮!",
+'parse_mode'=>"MARKDOWN"  ]);}
+if($from_id == $admin){
+if (strpos($text,'/setname ') !== fmemee ) {
+$text = str_replace("/setname ",null,$text);
+$txt = urlencode($text);
+Mroan('setChatTitle',[    'chat_id'=>$MROAN,    'title'=>$txt,    ]);    Mroan('sendmessage',[    'chat_id'=>$admin,    'reply_to_message_id'=>$message_id,    'text'=>"تم وضع الاسم '🎄!",  ]);}}
+if($from_id == $admin){
+if (strpos($text,'/pin ') !== fmemee) {
+$text = str_replace("/pin ",null,$text);
+$txt = urlencode($text);
+Mroan('pinChatMessage',[    'chat_id'=>$MROAN,    'message_id'=>$txt,    ]);    Mroan('sendmessage',[    'chat_id'=>$admin,    'reply_to_message_id'=>$message_id,    'text'=>"تم التثبيت '🔭!",    ]);}}
+if($from_id == $admin){
+if(strpos($text,'/unpin ') !== fmemee) {
+$text = str_replace("/unpin ",null,$text);
+$txt = urlencode($text);
+ Mroan('unpinChatMessage',[    'chat_id'=>$MROAN,    'message_id'=>$txt,   ]);        Mroan('sendmessage',[    'chat_id'=>$admin,    'reply_to_message_id'=>$message_id,    'text'=>"تم الغاء التثبيت '🎹!",    ]);}}
+ if($from_id == $admin){
+if (strpos($text,'/setinfo ') !== fmemee) {
+$text = str_replace("/setinfo ",null,$text);
+$txt = urlencode($text);
+Mroan('setChatDescription',[    'chat_id'=>$MROAN,   'description'=>$txt,    ]);    Mroan('sendmessage',[    'chat_id'=>$admin,    'reply_to_message_id'=>$message_id,    'text'=>"تم وضع وصف القناة '🍉!",    ]);}}
+if($from_id == $admin){
+if($text == "/admins" or $text == "عرض الادمنيه '🎒!"){
+    $z = Mroan('getChatAdministrators',[
+    'chat_id'=>$MROAN
+    ])->result;
+foreach($z as $c){
+    $naame = $c->user->first_name;
+    $idd = $c->user->id;
+    $usr = $c->user->username;
+    $p = json_encode($c);
+    Mroan('sendmessage',[    'chat_id'=>$admin,    'reply_to_message_id'=>$message_id,    'text'=>"
+🔰¦ Name - [$naame](tg://user?id=$idd) | 🎫¦ Id - [$idd](tg://user?id=$idd)
+      📛¦ User - @$usr       ",
+'parse_mode'=>"MARKDOWN",    ]);    }}}
+      if($text == "/tagadmin" or $text == "تاك الادمنيه '📷!" and $from_id == $admin){
+    $z = Mroan('getChatAdministrators',[
+    'chat_id'=>$MROAN
+    ])->result;
+foreach($z as $c){   
+    $usrr = $c->user->username;
+    $p = json_encode($c);
+    Mroan('sendmessage',[    'chat_id'=>$MROAN,   'text'=>"     @$usrr       ",'parse_mode'=>"MARKDOWN", 
+   ]); Mroan('sendmessage',[   'chat_id'=>$admin,   'text'=>"
+   🎻¦ مرحبا بك  » [$Dozax15](tg://user?id=$Dozax11)
+تم عمل تاك '🍓!
+   اله @$usrr '🍭!
+داخل القناة $MROAN '🎓!",'parse_mode'=>"MARKDOWN", 'reply_to_message_id'=>$message_id,   ]);   }}
+if($from_id == $admin){
+if(strpos($text, "/getmem") !== fmemee || strpos($text,'كشف ') !== fmemee){
+$text = str_replace("/getmem ",null,$text);
+$txt = urlencode($text);
+$z = Mroan('getChatMember',[    'chat_id'=>$MROAN,    'user_id'=>$txt    ]);   $p = json_encode($z);    Mroan('sendmessage',[   'chat_id'=>$admin,   'reply_to_message_id'=>$message_id,    'text'=>$p    ]);}}
+    if($from_id == $admin){
+    	if(strpos($text, "/ban") !== fmemee){
+    $idk = str_replace(['/ban',' '],null,$text);
+     Mroan('kickChatMember',[   'chat_id'=>$MROAN,   'user_id'=>$idk,    'until_date'=>0    ]);Mroan('sendmessage',['chat_id'=>$admin,'text'=>"
+🎻¦ العضو » [$idk](tg://user?id=$idk)
+تم حظرة من القناة '🔖؛",
+'parse_mode'=>"MARKDOWN",
+'reply_to_message_id'=>$message->message_id,]);}}
+if($from_id == $admin){
+if(strpos($text, "/unban") !== fmemee){
+$idk = str_replace(['/unban',' '],null,$text);
+Mroan('unbanChatMember',[    'chat_id'=>$MROAN,    'user_id'=>$idk    ]);Mroan('sendmessage',['chat_id'=>$admin,'text'=>"
+🎻¦ العضو » [$idk](tg://user?id=$idk)
+تم الغاء حظرة من القناة '📚؛",'parse_mode'=>"MARKDOWN",'reply_to_message_id'=>$message->message_id,]);}}
+$linkex = json_decode(file_get_contents("https://api.telegram.org/Mroan".API_KEY."/exportChatInviteLink?chat_id=$MROAN"));
+$linkchannel = $linkex->result;
+if($text == "رابط القناة '🎲!" or $text == "/link"){Mroan('sendmessage',['chat_id'=>$MROAN,]);Mroan('sendmessage',['chat_id'=>$admin,'text'=>"
+رابط القناة '📛! $linkchannel", 'parse_mode'=>"MARKDOWN",'disable_web_page_preview'=>true,      ]);      }
+
+ if($from_id == $admin){
+ if($message->video){
+Mroan('sendvideo',['chat_id'=>$MROAN,'video'=>$message->video->file_id,'caption'=>$message->caption,'parse_mode'=>"MARKDOWN",'disable_web_page_preview'=>true,
+]);Mroan('sendmessage',[ 'chat_id'=>$admin, 'text'=>"تم نشر الفيديو '📚!", ]); } }
+if($from_id == $admin){
+if($message->document){
+Mroan('Senddocument',['chat_id'=>$MROAN,'document'=>$message->document->file_id,'caption'=>$message->caption,'parse_mode'=>"MARKDOWN",'disable_web_page_preview'=>true,
+]);Mroan('sendmessage',[ 'chat_id'=>$admin, 'text'=>"تم نشر الملف او متحركه '🎻!", ]); } }
+ if($from_id == $admin){
+ if($message->audio){
+ Mroan('sendaudio',[    'chat_id'=>$MROAN,    'audio'=>$message->audio->file_id,    'caption'=>$message->caption,'parse_mode'=>"MARKDOWN",'disable_web_page_preview'=>true,
+ ]); Mroan('sendmessage',[ 'chat_id'=>$admin, 'text'=>"تم نشر الاغنيه '🎺!", ]); } }
+if($from_id == $admin){
+if($message->photo){
+    Mroan('sendPhoto',[      'chat_id'=>$MROAN,      'photo'=>$message->photo[0]->file_id,      'caption'=>$message->caption,      'parse_mode'=>"MARKDOWN",'disable_web_page_preview'=>true,
+    ]);Mroan('sendmessage',[ 'chat_id'=>$admin, 'text'=>"تم نشر الصورة '📇!", ]); } }
+if($from_id == $admin){
+if($message->voice){
+    Mroan('sendvoice',[     'chat_id'=>$MROAN,      'voice'=>$message->voice->file_id,     'caption'=>$message->caption,'parse_mode'=>"MARKDOWN",'disable_web_page_preview'=>true,
+      ]);      Mroan('sendmessage',[ 'chat_id'=>$admin, 'text'=>"تم نشر الاغنيه '📜!", ]); } }
+      if($from_id == $admin){
+      if($message->sticker){
+Mroan('sendsticker',['chat_id'=>$MROAN,'sticker'=>$message->sticker->file_id
+]);Mroan('sendmessage',['chat_id'=>$chat_id, 'text'=>"تم نشر الملصق '📂!", ]); } }
+if($from_id == $admin){
+	if($meme == 'meme' and $text !="رجوع '🍬!"){
+ Mroan('sendmessage',[   
+'chat_id'=>$MROAN,
+'text'=>$text,
+'parse_mode'=>"MARKDOWN",'disable_web_page_preview'=>true
+]);
+Mroan('sendmessage',[   
+'chat_id'=>$admin,
+'text'=>"تم نشر الرساله '📃!",
+]);
+file_put_contents("MROAN.txt","uuuo");
+}
+}
+
+
+
+$php88 = "https://t.me/c_941"; //رابط قناتك 
+header("location: $php88");
+#by : @mroan8 Or Ch : @php88
+?>
