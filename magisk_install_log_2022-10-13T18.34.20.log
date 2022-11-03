@@ -1,0 +1,69 @@
+- Target image: /dev/block/sda22
+- Device platform: arm64-v8a
+- Installing: 25.2 (25200)
+- Unpacking boot image
+Parsing boot image: [/dev/block/sda22]
+HEADER_VER      [1]
+KERNEL_SZ       [16149704]
+RAMDISK_SZ      [10109437]
+SECOND_SZ       [0]
+RECOV_DTBO_SZ   [2270854]
+OS_VERSION      [9.0.0]
+OS_PATCH_LEVEL  [2019-09]
+PAGESIZE        [4096]
+NAME            [SRPRL06C001]
+CMDLINE         [console=null androidboot.hardware=qcom androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 androidboot.usbcontroller=a600000.dwc3 nokaslr printk.devkmsg=on androidboot.vbmeta.avb_version=1.0 androidboot.avb_version=1.0 buildvariant=eng]
+CHECKSUM        [5bfdf43793ac8dfec5feb983e037675f24dd7f98000000000000000000000000]
+KERNEL_DTB_SZ   [386007]
+KERNEL_FMT      [gzip]
+RAMDISK_FMT     [lzma]
+VBMETA
+- Checking ramdisk status
+Loading cpio: [ramdisk.cpio]
+- Magisk patched boot image detected
+Loading cpio: [ramdisk.cpio]
+Remove [.backup]
+Remove [.backup/.magisk]
+Remove [overlay.d]
+Remove [overlay.d/sbin]
+Remove [overlay.d/sbin/magisk32.xz]
+Remove [overlay.d/sbin/magisk64.xz]
+Remove [.backup/.rmlist]
+Move [.backup/init] -> [init]
+Dump cpio: [ramdisk.cpio]
+- Patching ramdisk
+Loading cpio: [ramdisk.cpio]
+Add entry [init] (0750)
+Create directory [overlay.d] (0750)
+Create directory [overlay.d/sbin] (0750)
+Add entry [overlay.d/sbin/magisk32.xz] (0644)
+Add entry [overlay.d/sbin/magisk64.xz] (0644)
+Patch with flag KEEPVERITY=[true] KEEPFORCEENCRYPT=[true]
+Loading cpio: [ramdisk.cpio.orig]
+Backup mismatch entry: [init] -> [.backup/init]
+Record new entry: [overlay.d] -> [.backup/.rmlist]
+Record new entry: [overlay.d/sbin] -> [.backup/.rmlist]
+Record new entry: [overlay.d/sbin/magisk32.xz] -> [.backup/.rmlist]
+Record new entry: [overlay.d/sbin/magisk64.xz] -> [.backup/.rmlist]
+Create directory [.backup] (0000)
+Add entry [.backup/.magisk] (0000)
+Dump cpio: [ramdisk.cpio]
+Loading dtbs from [kernel_dtb]
+- Repacking boot image
+Parsing boot image: [/dev/block/sda22]
+HEADER_VER      [1]
+KERNEL_SZ       [16149704]
+RAMDISK_SZ      [10109437]
+SECOND_SZ       [0]
+RECOV_DTBO_SZ   [2270854]
+OS_VERSION      [9.0.0]
+OS_PATCH_LEVEL  [2019-09]
+PAGESIZE        [4096]
+NAME            [SRPRL06C001]
+CMDLINE         [console=null androidboot.hardware=qcom androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 androidboot.usbcontroller=a600000.dwc3 nokaslr printk.devkmsg=on androidboot.vbmeta.avb_version=1.0 androidboot.avb_version=1.0 buildvariant=eng]
+CHECKSUM        [5bfdf43793ac8dfec5feb983e037675f24dd7f98000000000000000000000000]
+KERNEL_DTB_SZ   [386007]
+KERNEL_FMT      [gzip]
+RAMDISK_FMT     [lzma]
+VBMETA
+Repack to boot image: [new-boot.img]
